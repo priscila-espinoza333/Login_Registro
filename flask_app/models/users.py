@@ -60,7 +60,7 @@ class User:
         #formulario = {first_name = 'Elena', last_name = 'De Troya', email = 'e@cd.com', password = '123'}
         query = "INSERT INTO users (first_name, last_name, email, password) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s)"
         result = connectToMySQL('login_registro').query_db(query, formulario)
-        return result #El ID del nuevo registro que se realizó                       
+        return result #Me devuelve el  ID del nuevo registro que se realizó                       
 
     @classmethod
     def get_by_email(cls, formulario):

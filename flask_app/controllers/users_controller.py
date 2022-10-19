@@ -20,7 +20,7 @@ def register():
         return redirect('/') 
 
 #Guardar registro
-    pwd = bcrypt.generate_password_hash(request.form['password']) #Encriptando la contraseña del usuario y guardándola en pwd
+    pwd = bcrypt.generate_password_hash(request.form['password']) #Aquí encriptando la contraseña del usuario y guardándola en pwd
 
     #Creamos un diccionario con todos los datos del request.form
     #request.form['password'] = pwd -> ERROR: request.form NO se puede cambiar
@@ -32,9 +32,9 @@ def register():
         "password": pwd
     }
 
-    id = User.save(formulario) #Recibir el identificador del nuevo usuario
+    id = User.save(formulario) #Aquí se recibe el identificador del nuevo usuario
 
-    session['user_id'] = id #Guardamos en sesión el identificador del usuario
+    session['user_id'] = id #Aquí guardamos en sesión el identificador del usuario
 
     return redirect('/dashboard')
 
